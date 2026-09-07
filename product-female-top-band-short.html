@@ -49,7 +49,7 @@
   <div class="product-detail">
     <div class="product-media">
       <div class="main-image">
-        <img id="main-product-image" src="images/products/female-top-band-short.jpg" alt="Band Collar Short Crop">
+        <img id="main-product-image" src="images/products/female-top-band-short-01.jpg" alt="Band Collar Short Crop">
       </div>
     </div>
 
@@ -57,7 +57,21 @@
       <p class="breadcrumb"><a href="tops.html">Tops</a> / Women / Band Collar</p>
       <h1>Band Collar Short Crop</h1>
       <p class="price">$135</p>
-      <p class="desc">A short-crop button-up in a graphic check, finished with a clean band collar. Cut from a small-batch fabric lot.</p>
+      <p class="desc">A short-crop button-up in a fine houndstooth check, finished with a clean band collar. Cut from a small-batch fabric lot.</p>
+
+      <div class="swatch-panel">
+      <div class="swatch-row">
+        <button class="swatch active" data-image="images/products/female-top-band-short-01.jpg" aria-label="View angle 1"><img src="images/products/female-top-band-short-01.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-02.jpg" aria-label="View angle 2"><img src="images/products/female-top-band-short-02.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-03.jpg" aria-label="View angle 3"><img src="images/products/female-top-band-short-03.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-04.jpg" aria-label="View angle 4"><img src="images/products/female-top-band-short-04.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-05.jpg" aria-label="View angle 5"><img src="images/products/female-top-band-short-05.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-06.jpg" aria-label="View angle 6"><img src="images/products/female-top-band-short-06.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-07.jpg" aria-label="View angle 7"><img src="images/products/female-top-band-short-07.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-08.jpg" aria-label="View angle 8"><img src="images/products/female-top-band-short-08.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-top-band-short-09.jpg" aria-label="View angle 9"><img src="images/products/female-top-band-short-09.jpg" alt=""></button>
+      </div>
+      </div>
 
       <div class="size-row-label">
         <span>Size</span>
@@ -200,6 +214,13 @@
   </footer>
 
   <script>
+    document.querySelectorAll('.swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.swatch').forEach(function(s){ s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('main-product-image').src = btn.dataset.image;
+      });
+    });
     document.querySelectorAll('.size-options button').forEach(function(btn){
       btn.addEventListener('click', function(){
         document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });

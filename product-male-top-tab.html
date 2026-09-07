@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tab Collar — Muyinza</title>
+<title>Classic Collar — Muyinza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,15 +49,36 @@
   <div class="product-detail">
     <div class="product-media">
       <div class="main-image">
-        <img id="main-product-image" src="images/products/male-top-tab.jpg" alt="Tab Collar">
+        <img id="main-product-image" src="images/products/male-classic-whitetanstripe-01.jpg" alt="Classic Collar">
       </div>
     </div>
 
     <div class="product-info">
-      <p class="breadcrumb"><a href="tops.html">Tops</a> / Men / Tab Collar</p>
-      <h1>Tab Collar</h1>
+      <p class="breadcrumb"><a href="tops.html">Tops</a> / Men / Classic Collar</p>
+      <h1>Classic Collar</h1>
       <p class="price">$175–$220</p>
-      <p class="desc">A multicolor striped shirt finished with a tab collar, paired easily with anything in the bottoms line.</p>
+      <p class="desc">A classic collar shirt cut from small-batch fabric lots — thirteen fabrics available while supplies last.</p>
+
+      <div class="swatch-panel">
+        <div class="color-swatch-row" id="color-swatch-row">
+        <button class="color-swatch active" data-color="White/Tan Stripe" aria-label="White/Tan Stripe"><img src="images/products/male-classic-whitetanstripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Brown" aria-label="Brown"><img src="images/products/male-classic-brown-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Olive" aria-label="Olive"><img src="images/products/male-classic-olive-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Blue Pinstripe" aria-label="Blue Pinstripe"><img src="images/products/male-classic-bluepinstripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Yellow Print" aria-label="Yellow Print"><img src="images/products/male-classic-yellowprint-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Navy" aria-label="Navy"><img src="images/products/male-classic-navy-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Light Blue Stripe" aria-label="Light Blue Stripe"><img src="images/products/male-classic-lightbluestripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Pink Stripe" aria-label="Pink Stripe"><img src="images/products/male-classic-pinkstripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Cyan Stripe" aria-label="Cyan Stripe"><img src="images/products/male-classic-cyanstripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Brown Stripe" aria-label="Brown Stripe"><img src="images/products/male-classic-brownstripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Blue/Orange Stripe" aria-label="Blue/Orange Stripe"><img src="images/products/male-classic-blueorangestripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Pale Yellow" aria-label="Pale Yellow"><img src="images/products/male-classic-paleyellow-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Purple Stripe" aria-label="Purple Stripe"><img src="images/products/male-classic-purplestripe-01.jpg" alt=""></button>
+      </div>
+        <p class="selected-color-label" id="selected-color-label">White/Tan Stripe</p>
+
+        <div class="angle-row" id="angle-row"></div>
+      </div>
 
       <div class="size-row-label">
         <span>Size</span>
@@ -200,6 +221,37 @@
   </footer>
 
   <script>
+    const colorData = {"White/Tan Stripe": ["images/products/male-classic-whitetanstripe-01.jpg", "images/products/male-classic-whitetanstripe-02.jpg", "images/products/male-classic-whitetanstripe-03.jpg", "images/products/male-classic-whitetanstripe-04.jpg"], "Brown": ["images/products/male-classic-brown-01.jpg", "images/products/male-classic-brown-02.jpg", "images/products/male-classic-brown-03.jpg", "images/products/male-classic-brown-04.jpg", "images/products/male-classic-brown-05.jpg", "images/products/male-classic-brown-06.jpg", "images/products/male-classic-brown-07.jpg", "images/products/male-classic-brown-08.jpg"], "Olive": ["images/products/male-classic-olive-01.jpg", "images/products/male-classic-olive-02.jpg", "images/products/male-classic-olive-03.jpg", "images/products/male-classic-olive-04.jpg"], "Blue Pinstripe": ["images/products/male-classic-bluepinstripe-01.jpg", "images/products/male-classic-bluepinstripe-02.jpg", "images/products/male-classic-bluepinstripe-03.jpg", "images/products/male-classic-bluepinstripe-04.jpg"], "Yellow Print": ["images/products/male-classic-yellowprint-01.jpg", "images/products/male-classic-yellowprint-02.jpg", "images/products/male-classic-yellowprint-03.jpg", "images/products/male-classic-yellowprint-04.jpg"], "Navy": ["images/products/male-classic-navy-01.jpg", "images/products/male-classic-navy-02.jpg", "images/products/male-classic-navy-03.jpg", "images/products/male-classic-navy-04.jpg", "images/products/male-classic-navy-05.jpg"], "Light Blue Stripe": ["images/products/male-classic-lightbluestripe-01.jpg", "images/products/male-classic-lightbluestripe-02.jpg", "images/products/male-classic-lightbluestripe-03.jpg", "images/products/male-classic-lightbluestripe-04.jpg", "images/products/male-classic-lightbluestripe-05.jpg", "images/products/male-classic-lightbluestripe-06.jpg", "images/products/male-classic-lightbluestripe-07.jpg"], "Pink Stripe": ["images/products/male-classic-pinkstripe-01.jpg", "images/products/male-classic-pinkstripe-02.jpg", "images/products/male-classic-pinkstripe-03.jpg", "images/products/male-classic-pinkstripe-04.jpg", "images/products/male-classic-pinkstripe-05.jpg", "images/products/male-classic-pinkstripe-06.jpg", "images/products/male-classic-pinkstripe-07.jpg", "images/products/male-classic-pinkstripe-08.jpg"], "Cyan Stripe": ["images/products/male-classic-cyanstripe-01.jpg", "images/products/male-classic-cyanstripe-02.jpg", "images/products/male-classic-cyanstripe-03.jpg", "images/products/male-classic-cyanstripe-04.jpg"], "Brown Stripe": ["images/products/male-classic-brownstripe-01.jpg", "images/products/male-classic-brownstripe-02.jpg", "images/products/male-classic-brownstripe-03.jpg", "images/products/male-classic-brownstripe-04.jpg", "images/products/male-classic-brownstripe-05.jpg", "images/products/male-classic-brownstripe-06.jpg"], "Blue/Orange Stripe": ["images/products/male-classic-blueorangestripe-01.jpg", "images/products/male-classic-blueorangestripe-02.jpg", "images/products/male-classic-blueorangestripe-03.jpg", "images/products/male-classic-blueorangestripe-04.jpg", "images/products/male-classic-blueorangestripe-05.jpg"], "Pale Yellow": ["images/products/male-classic-paleyellow-01.jpg", "images/products/male-classic-paleyellow-02.jpg", "images/products/male-classic-paleyellow-03.jpg", "images/products/male-classic-paleyellow-04.jpg"], "Purple Stripe": ["images/products/male-classic-purplestripe-01.jpg", "images/products/male-classic-purplestripe-02.jpg", "images/products/male-classic-purplestripe-03.jpg", "images/products/male-classic-purplestripe-04.jpg"]};
+    let currentColor = "White/Tan Stripe";
+
+    function renderAngles(color) {
+      const imgs = colorData[color];
+      const row = document.getElementById('angle-row');
+      row.innerHTML = imgs.map((src, i) =>
+        `<button class="angle-thumb${i===0?' active':''}" data-image="${src}"><img src="${src}" alt=""></button>`
+      ).join('');
+      document.getElementById('main-product-image').src = imgs[0];
+      document.querySelectorAll('.angle-thumb').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          document.querySelectorAll('.angle-thumb').forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('main-product-image').src = btn.dataset.image;
+        });
+      });
+    }
+
+    document.querySelectorAll('.color-swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.color-swatch').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentColor = btn.dataset.color;
+        document.getElementById('selected-color-label').textContent = currentColor;
+        renderAngles(currentColor);
+      });
+    });
+
+    renderAngles(currentColor);
+
     document.querySelectorAll('.size-options button').forEach(function(btn){
       btn.addEventListener('click', function(){
         document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });

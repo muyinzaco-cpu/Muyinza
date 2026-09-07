@@ -49,15 +49,30 @@
   <div class="product-detail">
     <div class="product-media">
       <div class="main-image">
-        <img id="main-product-image" src="images/products/female-top-camp-short.jpg" alt="Camp Collar Short Crop">
+        <img id="main-product-image" src="images/products/camp-short-green-01.jpg" alt="Camp Collar Short Crop">
       </div>
+
+
     </div>
 
     <div class="product-info">
       <p class="breadcrumb"><a href="tops.html">Tops</a> / Women / Camp Collar</p>
       <h1>Camp Collar Short Crop</h1>
       <p class="price">$135</p>
-      <p class="desc">A short-crop camp shirt in a soft plaid, cut from a small-batch fabric lot.</p>
+      <p class="desc">A short-crop camp shirt cut from small-batch fabric lots — five fabrics available while supplies last.</p>
+
+      <div class="swatch-panel">
+      <div class="angle-row" id="angle-row"></div>
+
+      <div class="color-swatch-row" id="color-swatch-row">
+        <button class="color-swatch active" data-color="Green" aria-label="Green"><img src="images/products/camp-short-green-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Cream" aria-label="Cream"><img src="images/products/camp-short-cream-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Yellow" aria-label="Yellow"><img src="images/products/camp-short-yellow-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Maroon" aria-label="Maroon"><img src="images/products/camp-short-maroon-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Navy Gingham" aria-label="Navy Gingham"><img src="images/products/camp-short-navygingham-01.jpg" alt=""></button>
+      </div>
+      <p class="selected-color-label" id="selected-color-label">Green</p>
+      </div>
 
       <div class="size-row-label">
         <span>Size</span>
@@ -200,6 +215,37 @@
   </footer>
 
   <script>
+    const colorData = {"Green": ["images/products/camp-short-green-01.jpg", "images/products/camp-short-green-02.jpg", "images/products/camp-short-green-03.jpg", "images/products/camp-short-green-04.jpg"], "Cream": ["images/products/camp-short-cream-01.jpg", "images/products/camp-short-cream-02.jpg", "images/products/camp-short-cream-03.jpg", "images/products/camp-short-cream-04.jpg", "images/products/camp-short-cream-05.jpg"], "Yellow": ["images/products/camp-short-yellow-01.jpg", "images/products/camp-short-yellow-02.jpg", "images/products/camp-short-yellow-03.jpg", "images/products/camp-short-yellow-04.jpg"], "Maroon": ["images/products/camp-short-maroon-01.jpg", "images/products/camp-short-maroon-02.jpg", "images/products/camp-short-maroon-03.jpg", "images/products/camp-short-maroon-04.jpg"], "Navy Gingham": ["images/products/camp-short-navygingham-01.jpg", "images/products/camp-short-navygingham-02.jpg", "images/products/camp-short-navygingham-03.jpg", "images/products/camp-short-navygingham-04.jpg"]};
+    let currentColor = "Green";
+
+    function renderAngles(color) {
+      const imgs = colorData[color];
+      const row = document.getElementById('angle-row');
+      row.innerHTML = imgs.map((src, i) =>
+        `<button class="angle-thumb${i===0?' active':''}" data-image="${src}"><img src="${src}" alt=""></button>`
+      ).join('');
+      document.getElementById('main-product-image').src = imgs[0];
+      document.querySelectorAll('.angle-thumb').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          document.querySelectorAll('.angle-thumb').forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('main-product-image').src = btn.dataset.image;
+        });
+      });
+    }
+
+    document.querySelectorAll('.color-swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.color-swatch').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentColor = btn.dataset.color;
+        document.getElementById('selected-color-label').textContent = currentColor;
+        renderAngles(currentColor);
+      });
+    });
+
+    renderAngles(currentColor);
+
     document.querySelectorAll('.size-options button').forEach(function(btn){
       btn.addEventListener('click', function(){
         document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });

@@ -49,7 +49,7 @@
   <div class="product-detail">
     <div class="product-media">
       <div class="main-image">
-        <img id="main-product-image" src="images/products/male-top-camp.jpg" alt="Camp Collar">
+        <img id="main-product-image" src="images/products/male-camp-brown-01.jpg" alt="Camp Collar">
       </div>
     </div>
 
@@ -57,7 +57,19 @@
       <p class="breadcrumb"><a href="tops.html">Tops</a> / Men / Camp Collar</p>
       <h1>Camp Collar</h1>
       <p class="price">$175–$220</p>
-      <p class="desc">A denim-toned camp shirt and short set, cut from a small-batch fabric lot.</p>
+      <p class="desc">A camp shirt cut from small-batch fabric lots — four fabrics available while supplies last.</p>
+
+      <div class="swatch-panel">
+        <div class="color-swatch-row" id="color-swatch-row">
+        <button class="color-swatch active" data-color="Brown" aria-label="Brown"><img src="images/products/male-camp-brown-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Grey (Pants)" aria-label="Grey (Pants)"><img src="images/products/male-camp-greypants-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Navy" aria-label="Navy"><img src="images/products/male-camp-navy-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Grey Check" aria-label="Grey Check"><img src="images/products/male-camp-greycheck-01.jpg" alt=""></button>
+      </div>
+        <p class="selected-color-label" id="selected-color-label">Brown</p>
+
+        <div class="angle-row" id="angle-row"></div>
+      </div>
 
       <div class="size-row-label">
         <span>Size</span>
@@ -200,6 +212,37 @@
   </footer>
 
   <script>
+    const colorData = {"Brown": ["images/products/male-camp-brown-01.jpg", "images/products/male-camp-brown-02.jpg", "images/products/male-camp-brown-03.jpg", "images/products/male-camp-brown-04.jpg", "images/products/male-camp-brown-05.jpg", "images/products/male-camp-brown-06.jpg", "images/products/male-camp-brown-07.jpg", "images/products/male-camp-brown-08.jpg"], "Grey (Pants)": ["images/products/male-camp-greypants-01.jpg", "images/products/male-camp-greypants-02.jpg", "images/products/male-camp-greypants-03.jpg", "images/products/male-camp-greypants-04.jpg"], "Navy": ["images/products/male-camp-navy-01.jpg", "images/products/male-camp-navy-02.jpg", "images/products/male-camp-navy-03.jpg", "images/products/male-camp-navy-04.jpg", "images/products/male-camp-navy-05.jpg"], "Grey Check": ["images/products/male-camp-greycheck-01.jpg", "images/products/male-camp-greycheck-02.jpg", "images/products/male-camp-greycheck-03.jpg", "images/products/male-camp-greycheck-04.jpg", "images/products/male-camp-greycheck-05.jpg"]};
+    let currentColor = "Brown";
+
+    function renderAngles(color) {
+      const imgs = colorData[color];
+      const row = document.getElementById('angle-row');
+      row.innerHTML = imgs.map((src, i) =>
+        `<button class="angle-thumb${i===0?' active':''}" data-image="${src}"><img src="${src}" alt=""></button>`
+      ).join('');
+      document.getElementById('main-product-image').src = imgs[0];
+      document.querySelectorAll('.angle-thumb').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          document.querySelectorAll('.angle-thumb').forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('main-product-image').src = btn.dataset.image;
+        });
+      });
+    }
+
+    document.querySelectorAll('.color-swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.color-swatch').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentColor = btn.dataset.color;
+        document.getElementById('selected-color-label').textContent = currentColor;
+        renderAngles(currentColor);
+      });
+    });
+
+    renderAngles(currentColor);
+
     document.querySelectorAll('.size-options button').forEach(function(btn){
       btn.addEventListener('click', function(){
         document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });

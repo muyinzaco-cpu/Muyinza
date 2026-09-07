@@ -49,7 +49,7 @@
   <div class="product-detail">
     <div class="product-media">
       <div class="main-image">
-        <img id="main-product-image" src="images/products/female-blazer.jpg" alt="Houndstooth Cropped Blazer">
+        <img id="main-product-image" src="images/products/female-blazer-01.jpg" alt="Houndstooth Cropped Blazer">
       </div>
     </div>
 
@@ -57,7 +57,20 @@
       <p class="breadcrumb"><a href="blazers.html">Jackets</a> / Women</p>
       <h1>Houndstooth Cropped Blazer</h1>
       <p class="price">$325</p>
-      <p class="desc">A cropped, double-breasted blazer in a warm houndstooth check, cut from a small-batch fabric lot. Part of a two-piece set with the matching mini skirt.</p>
+      <p class="desc">A cropped, double-breasted blazer in a warm houndstooth check, cut from a small-batch fabric lot. Shown styled with both the matching mini skirt and tailored shorts.</p>
+
+      <div class="swatch-panel">
+      <div class="swatch-row">
+        <button class="swatch active" data-image="images/products/female-blazer-01.jpg" aria-label="View angle 1"><img src="images/products/female-blazer-01.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-02.jpg" aria-label="View angle 2"><img src="images/products/female-blazer-02.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-03.jpg" aria-label="View angle 3"><img src="images/products/female-blazer-03.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-04.jpg" aria-label="View angle 4"><img src="images/products/female-blazer-04.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-05.jpg" aria-label="View angle 5"><img src="images/products/female-blazer-05.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-06.jpg" aria-label="View angle 6"><img src="images/products/female-blazer-06.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-07.jpg" aria-label="View angle 7"><img src="images/products/female-blazer-07.jpg" alt=""></button>
+        <button class="swatch" data-image="images/products/female-blazer-08.jpg" aria-label="View angle 8"><img src="images/products/female-blazer-08.jpg" alt=""></button>
+      </div>
+      </div>
 
       <div class="size-row-label">
         <span>Size</span>
@@ -199,6 +212,13 @@
   </footer>
 
   <script>
+    document.querySelectorAll('.swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.swatch').forEach(function(s){ s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('main-product-image').src = btn.dataset.image;
+      });
+    });
     document.querySelectorAll('.size-options button').forEach(function(btn){
       btn.addEventListener('click', function(){
         document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });

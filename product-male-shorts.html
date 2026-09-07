@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailored Shorts — Muyinza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="nav-left">
+        <a href="index.html" class="logo" aria-label="Muyinza — Home">
+          <img src="images/logo-muyinza.png" alt="Muyinza">
+        </a>
+        <ul class="primary-nav">
+          <li class="has-dropdown">
+            <a href="clothing.html" aria-haspopup="true">Clothing</a>
+            <div class="mega-dropdown">
+              <div class="mega-col">
+                <h5>Women</h5>
+                <a href="tops.html#women">Tops</a>
+                <a href="bottoms.html#women">Bottoms</a>
+                <a href="blazers.html#women">Jackets</a>
+              </div>
+              <div class="mega-col">
+                <h5>Men</h5>
+                <a href="tops.html#men">Tops</a>
+                <a href="bottoms.html#men">Bottoms</a>
+                <a href="blazers.html#men">Jackets</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="tops.html">Tops</a></li>
+          <li><a href="bottoms.html">Bottoms</a></li>
+          <li><a href="blazers.html">Jackets</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="cart.html" class="cart-link">Cart <span class="cart-count">(0)</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="product-detail">
+    <div class="product-media">
+      <div class="main-image">
+        <img id="main-product-image" src="images/products/male-short-greystripe-01.jpg" alt="Tailored Shorts">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <p class="breadcrumb"><a href="bottoms.html">Bottoms</a> / Men / Shorts</p>
+      <h1>Tailored Shorts</h1>
+      <p class="price">$155</p>
+      <p class="desc">A tailored short cut from small-batch fabric lots — five fabrics available while supplies last.</p>
+
+      <div class="swatch-panel">
+        <div class="color-swatch-row" id="color-swatch-row">
+        <button class="color-swatch active" data-color="Grey Stripe" aria-label="Grey Stripe"><img src="images/products/male-short-greystripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="White Stripe" aria-label="White Stripe"><img src="images/products/male-short-whitestripe-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Brown" aria-label="Brown"><img src="images/products/male-short-brown-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Yellow" aria-label="Yellow"><img src="images/products/male-short-yellow-01.jpg" alt=""></button>
+        <button class="color-swatch" data-color="Navy Stripe" aria-label="Navy Stripe"><img src="images/products/male-short-navystripe-01.jpg" alt=""></button>
+      </div>
+        <p class="selected-color-label" id="selected-color-label">Grey Stripe</p>
+
+        <div class="angle-row" id="angle-row"></div>
+      </div>
+
+      <div class="size-row-label">
+        <span>Size</span>
+        <button class="size-guide-trigger" onclick="document.getElementById('size-guide-modal').classList.add('open')">Size Guide</button>
+      </div>
+      <div class="size-options">
+        <button data-size="28">28</button>
+        <button data-size="30">30</button>
+        <button data-size="32">32</button>
+        <button data-size="34">34</button>
+        <button data-size="36">36</button>
+      </div>
+
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+
+
+  <div class="modal-overlay" id="size-guide-modal">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close size guide" onclick="document.getElementById('size-guide-modal').classList.remove('open')">&times;</button>
+      <h2>Size Guide</h2>
+      <p class="size-guide-note">As a general guide, Women's sizing runs about two sizes larger than Men's for the same fit &mdash; a Women's Medium is roughly equivalent to a Men's Small, a Women's Large to a Men's Small/Medium, and a Women's XL to a Men's Medium, and so on. Use the exact measurements below for the most accurate fit.</p>
+
+      <table class="size-table">
+        <caption>Women's Shirts (Short Crop)</caption>
+        <thead><tr><th>Size</th><th>Chest</th><th>Sleeve</th><th>Length</th></tr></thead>
+        <tbody>
+          <tr><td>XS</td><td>32</td><td>7</td><td>16</td></tr>
+          <tr><td>S</td><td>36</td><td>7</td><td>16</td></tr>
+          <tr><td>M</td><td>38</td><td>7</td><td>16</td></tr>
+          <tr><td>L</td><td>40</td><td>8</td><td>18</td></tr>
+          <tr><td>XL</td><td>42</td><td>8</td><td>18</td></tr>
+        </tbody>
+      </table>
+
+      <table class="size-table">
+        <caption>Women's Shirts (Mid Crop)</caption>
+        <thead><tr><th>Size</th><th>Chest</th><th>Sleeve</th><th>Length</th></tr></thead>
+        <tbody>
+          <tr><td>XS</td><td>32</td><td>8</td><td>23</td></tr>
+          <tr><td>S</td><td>36</td><td>8</td><td>23</td></tr>
+          <tr><td>M</td><td>38</td><td>9</td><td>24</td></tr>
+          <tr><td>L</td><td>40</td><td>9</td><td>25</td></tr>
+          <tr><td>XL</td><td>42</td><td>10</td><td>25</td></tr>
+        </tbody>
+      </table>
+
+      <table class="size-table">
+        <caption>Men's Shirts</caption>
+        <thead><tr><th>Size</th><th>Chest</th><th>Sleeve</th><th>Length</th></tr></thead>
+        <tbody>
+          <tr><td>S</td><td>38</td><td>9</td><td>24</td></tr>
+          <tr><td>M</td><td>42</td><td>9</td><td>24</td></tr>
+          <tr><td>L</td><td>46</td><td>9</td><td>25</td></tr>
+          <tr><td>XL</td><td>50</td><td>10</td><td>25</td></tr>
+          <tr><td>XXL</td><td>54</td><td>10</td><td>25</td></tr>
+        </tbody>
+      </table>
+
+      <table class="size-table">
+        <caption>All Shorts</caption>
+        <thead><tr><th>Waist</th><th>Hips</th><th>Length</th><th>Leg Width</th></tr></thead>
+        <tbody>
+          <tr><td>26</td><td>36</td><td>14</td><td>24</td></tr>
+          <tr><td>28</td><td>38</td><td>14</td><td>24</td></tr>
+          <tr><td>30</td><td>40</td><td>14</td><td>24</td></tr>
+          <tr><td>32</td><td>42</td><td>14</td><td>24</td></tr>
+          <tr><td>34</td><td>44</td><td>15</td><td>26</td></tr>
+          <tr><td>36</td><td>46</td><td>16</td><td>26</td></tr>
+        </tbody>
+      </table>
+
+      <table class="size-table">
+        <caption>Women's Skirts</caption>
+        <thead><tr><th>Waist</th><th>Hips</th><th>Length</th><th>Slit</th></tr></thead>
+        <tbody>
+          <tr><td>24</td><td>32</td><td>14</td><td>4</td></tr>
+          <tr><td>26</td><td>34</td><td>14</td><td>4</td></tr>
+          <tr><td>28</td><td>36</td><td>14</td><td>3.5</td></tr>
+          <tr><td>30</td><td>38</td><td>15</td><td>3.5</td></tr>
+          <tr><td>32</td><td>40</td><td>15</td><td>3</td></tr>
+          <tr><td>34</td><td>42</td><td>16</td><td>3</td></tr>
+        </tbody>
+      </table>
+
+      <table class="size-table">
+        <caption>All Blazers</caption>
+        <thead><tr><th>Size</th><th>Chest</th><th>Shoulders</th><th>Length</th><th>Sleeve</th></tr></thead>
+        <tbody>
+          <tr><td>S</td><td>36</td><td>17</td><td>19</td><td>23</td></tr>
+          <tr><td>M</td><td>40</td><td>18</td><td>21</td><td>24</td></tr>
+          <tr><td>L</td><td>42</td><td>19</td><td>24</td><td>25.5</td></tr>
+          <tr><td>XL</td><td>44</td><td>20</td><td>26</td><td>26</td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:12px;color:rgba(11,11,11,.5);">All measurements in inches. Pants sizing coming soon.</p>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-mark" aria-label="Muyinza — Home">
+        <img src="images/logo-m-icon-blue.png" alt="Muyinza">
+      </a>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Muyinza</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul><li><a href="care.html">Care</a></li></ul>
+          <h4 class="footer-subhead">Connect</h4>
+          <ul><li><a href="https://www.instagram.com/muyinza__/" target="_blank" rel="noopener">Instagram</a></li></ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Stay in the Loop</h4>
+          <form class="footer-newsletter-form" action="#" method="post">
+            <label for="newsletter-email-product-male-shorts" style="position:absolute;left:-9999px;">Email address</label>
+            <input id="newsletter-email-product-male-shorts" type="email" name="email" placeholder="Email address" required>
+            <button type="submit">Sign Up</button>
+          </form>
+          <img class="flag-mark-corner" src="images/flag.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Muyinza. All rights reserved.</span>
+      <span>Handmade in Uganda</span>
+    </div>
+  </footer>
+
+  <script>
+    const colorData = {"Grey Stripe": ["images/products/male-short-greystripe-01.jpg", "images/products/male-short-greystripe-02.jpg", "images/products/male-short-greystripe-03.jpg", "images/products/male-short-greystripe-04.jpg", "images/products/male-short-greystripe-05.jpg", "images/products/male-short-greystripe-06.jpg", "images/products/male-short-greystripe-07.jpg", "images/products/male-short-greystripe-08.jpg", "images/products/male-short-greystripe-09.jpg"], "White Stripe": ["images/products/male-short-whitestripe-01.jpg", "images/products/male-short-whitestripe-02.jpg", "images/products/male-short-whitestripe-03.jpg", "images/products/male-short-whitestripe-04.jpg"], "Brown": ["images/products/male-short-brown-01.jpg", "images/products/male-short-brown-02.jpg", "images/products/male-short-brown-03.jpg", "images/products/male-short-brown-04.jpg"], "Yellow": ["images/products/male-short-yellow-01.jpg", "images/products/male-short-yellow-02.jpg", "images/products/male-short-yellow-03.jpg", "images/products/male-short-yellow-04.jpg", "images/products/male-short-yellow-05.jpg"], "Navy Stripe": ["images/products/male-short-navystripe-01.jpg", "images/products/male-short-navystripe-02.jpg", "images/products/male-short-navystripe-03.jpg", "images/products/male-short-navystripe-04.jpg"]};
+    let currentColor = "Grey Stripe";
+
+    function renderAngles(color) {
+      const imgs = colorData[color];
+      const row = document.getElementById('angle-row');
+      row.innerHTML = imgs.map((src, i) =>
+        `<button class="angle-thumb${i===0?' active':''}" data-image="${src}"><img src="${src}" alt=""></button>`
+      ).join('');
+      document.getElementById('main-product-image').src = imgs[0];
+      document.querySelectorAll('.angle-thumb').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          document.querySelectorAll('.angle-thumb').forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('main-product-image').src = btn.dataset.image;
+        });
+      });
+    }
+
+    document.querySelectorAll('.color-swatch').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.color-swatch').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentColor = btn.dataset.color;
+        document.getElementById('selected-color-label').textContent = currentColor;
+        renderAngles(currentColor);
+      });
+    });
+
+    renderAngles(currentColor);
+
+    document.querySelectorAll('.size-options button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.size-options button').forEach(function(s){ s.classList.remove('selected'); });
+        btn.classList.add('selected');
+      });
+    });
+    document.getElementById('size-guide-modal').addEventListener('click', function(e){
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
