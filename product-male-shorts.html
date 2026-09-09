@@ -84,6 +84,8 @@
         <button data-size="36">36</button>
       </div>
 
+      <p class="fit-note">Wolfgang is 6'1" and wearing a medium</p>
+
       <button class="add-to-cart-btn">Add to Cart</button>
     </div>
   </div>
@@ -93,7 +95,7 @@
     <div class="modal-box">
       <button class="modal-close" aria-label="Close size guide" onclick="document.getElementById('size-guide-modal').classList.remove('open')">&times;</button>
       <h2>Size Guide</h2>
-      <p class="size-guide-note">As a general guide, Women's sizing runs about two sizes larger than Men's for the same fit &mdash; a Women's Medium is roughly equivalent to a Men's Small, a Women's Large to a Men's Small/Medium, and a Women's XL to a Men's Medium, and so on. Use the exact measurements below for the most accurate fit.</p>
+      <p class="size-guide-note">As a general guide, women's and men's sizes for tops are about 1 off from each other. For example, a women's medium is the same as a men's small. Use exact measurements below for the most accurate fit.</p>
 
       <table class="size-table">
         <caption>Women's Shirts (Short Crop)</caption>
@@ -196,7 +198,7 @@
 
         <div class="footer-col footer-newsletter">
           <h4>Stay in the Loop</h4>
-          <form class="footer-newsletter-form" action="#" method="post">
+          <form class="footer-newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <label for="newsletter-email-product-male-shorts" style="position:absolute;left:-9999px;">Email address</label>
             <input id="newsletter-email-product-male-shorts" type="email" name="email" placeholder="Email address" required>
             <button type="submit">Sign Up</button>
@@ -256,6 +258,8 @@
   </script>
 
   <script src="js/product-gallery.js"></script>
+
+  <script src="js/newsletter.js"></script>
 
 </body>
 </html>
