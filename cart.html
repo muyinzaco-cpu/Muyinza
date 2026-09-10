@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events — Muyinza</title>
+<title>Cart — Muyinza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -48,22 +48,12 @@
 
   <div class="page-header">
     <p class="eyebrow">Muyinza</p>
-    <h1>Events</h1>
+    <h1>Cart</h1>
   </div>
 
-  <div class="about-body">
-    <div class="events-grid">
-      <article class="event-card">
-        <div class="thumb"><span>[ event flyer ]</span></div>
-        <h3>Muyinza &amp; Martinis</h3>
-        <p>9/10 · Blackfeather Vintage · 6–9 PM</p>
-      </article>
-      <article class="event-card">
-        <div class="thumb"><span>[ event flyer ]</span></div>
-        <h3>Muyinza &amp; Measurements</h3>
-        <p>9/12 · Blackfeather Vintage · 12–6 PM</p>
-      </article>
-    </div>
+  <div class="cart-page">
+    <p class="cart-note">Each item below checks out separately through Square — adding more than one thing means completing a quick payment for each, one after another.</p>
+    <div id="cart-contents"></div>
   </div>
 
   <footer class="site-footer">
@@ -92,8 +82,8 @@
         <div class="footer-col footer-newsletter">
           <h4>Stay in the Loop</h4>
           <form class="footer-newsletter-form" action="https://formspree.io/f/xppzkkro" method="POST">
-            <label for="newsletter-email-events" style="position:absolute;left:-9999px;">Email address</label>
-            <input id="newsletter-email-events" type="email" name="email" placeholder="Email address" required>
+            <label for="newsletter-email-cart" style="position:absolute;left:-9999px;">Email address</label>
+            <input id="newsletter-email-cart" type="email" name="email" placeholder="Email address" required>
             <button type="submit">Sign Up</button>
           </form>
           <img class="flag-mark-corner" src="images/flag.png" alt="">
@@ -107,9 +97,67 @@
     </div>
   </footer>
 
-  <script src="js/newsletter.js"></script>
-
   <script src="js/cart.js"></script>
+  <script>
+    function renderCart() {
+      const cart = MuyinzaCart.getCart();
+      const container = document.getElementById('cart-contents');
+
+      if (!cart.length) {
+        container.innerHTML = '<div class="cart-empty"><p>Your cart is empty.</p><a href="clothing.html" class="cart-empty-link">Browse the collection</a></div>';
+        return;
+      }
+
+      container.innerHTML = cart.map(function (item, i) {
+        const details = [item.size ? ('Size ' + item.size) : null, item.color]
+          .filter(Boolean).join(' · ');
+
+        const payButton = item.checkoutLink
+          ? `<a class="cart-pay-btn" href="${item.checkoutLink}" target="_blank" rel="noopener">Complete Payment — ${item.price}</a><p class="cart-checkout-note">You'll confirm size ${item.size ? '(' + item.size + ')' : ''} again on Square's page.</p>`
+          : `<span class="cart-pay-pending">Payment link coming soon</span>`;
+
+        return `
+          <div class="cart-row" data-index="${i}">
+            <div class="cart-row-thumb"><img src="${item.img}" alt="${item.name}"></div>
+            <div class="cart-row-info">
+              <h3>${item.name}</h3>
+              <p class="cart-row-details">${details}</p>
+              <div class="cart-qty">
+                <button class="cart-qty-btn" data-action="decrease" aria-label="Decrease quantity">&minus;</button>
+                <span>${item.quantity}</span>
+                <button class="cart-qty-btn" data-action="increase" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="cart-remove-btn" data-action="remove">Remove</button>
+            </div>
+            <div class="cart-row-pay">
+              <p class="cart-row-price">${item.price}</p>
+              ${payButton}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.cart-row').forEach(function (row) {
+        const index = parseInt(row.dataset.index, 10);
+        row.querySelector('[data-action="remove"]').addEventListener('click', function () {
+          MuyinzaCart.removeItemFromCart(index);
+          renderCart();
+        });
+        row.querySelector('[data-action="increase"]').addEventListener('click', function () {
+          const cart = MuyinzaCart.getCart();
+          MuyinzaCart.setItemQuantity(index, cart[index].quantity + 1);
+          renderCart();
+        });
+        row.querySelector('[data-action="decrease"]').addEventListener('click', function () {
+          const cart = MuyinzaCart.getCart();
+          MuyinzaCart.setItemQuantity(index, cart[index].quantity - 1);
+          renderCart();
+        });
+      });
+    }
+
+    renderCart();
+  </script>
 
 </body>
 </html>

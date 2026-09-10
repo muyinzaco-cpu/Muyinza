@@ -172,6 +172,52 @@ body.home.scrolled .nav-left .logo{ opacity:1; transform: translateY(0); pointer
 .page-header .intro{ margin-top:18px; max-width:60ch; font-size:14px; color: rgba(11,11,11,.7); }
 
 /* ===========================================================
+   CART PAGE
+=========================================================== */
+.cart-page{ max-width:900px; margin:0 auto; padding:40px 32px 100px; }
+.cart-note{ font-size:13px; color: rgba(11,11,11,.55); margin-bottom:32px; max-width:60ch; }
+
+.cart-empty{ padding:60px 0; text-align:center; }
+.cart-empty p{ font-size:15px; color: rgba(11,11,11,.6); margin-bottom:16px; }
+.cart-empty-link{ font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+
+.cart-row{
+  display:grid; grid-template-columns: 110px 1fr 200px; gap:24px;
+  padding:24px 0; border-bottom:1px solid var(--line); align-items:start;
+}
+.cart-row-thumb{ width:110px; aspect-ratio:2/3; overflow:hidden; background: var(--paper); }
+.cart-row-thumb img{ width:100%; height:100%; object-fit:cover; }
+.cart-row-info h3{ font-size:15px; font-weight:700; margin-bottom:4px; }
+.cart-row-details{ font-size:12px; color: rgba(11,11,11,.55); margin-bottom:14px; }
+
+.cart-qty{ display:inline-flex; align-items:center; gap:12px; border:1px solid var(--line); padding:4px 10px; margin-bottom:12px; }
+.cart-qty-btn{ background:none; border:0; font-size:15px; cursor:pointer; width:20px; }
+.cart-qty-btn:hover{ color: var(--blu); }
+
+.cart-remove-btn{
+  display:block; background:none; border:0; padding:0;
+  font-size:11px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+  color: rgba(11,11,11,.5); cursor:pointer; text-decoration:underline; text-underline-offset:3px;
+}
+.cart-remove-btn:hover{ color: var(--fire); }
+
+.cart-row-pay{ text-align:right; }
+.cart-row-price{ font-size:15px; font-weight:700; margin-bottom:12px; }
+.cart-pay-btn{
+  display:inline-block; background: var(--black); color:#fff;
+  font-size:11px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:10px 16px; text-align:center; white-space:nowrap;
+}
+.cart-pay-btn:hover{ background: var(--blu); color:#fff; }
+.cart-pay-pending{ font-size:11px; color: rgba(11,11,11,.4); font-style:italic; }
+.cart-checkout-note{ font-size:10px; color: rgba(11,11,11,.45); margin-top:8px; max-width:160px; }
+
+@media (max-width:640px){
+  .cart-row{ grid-template-columns: 90px 1fr; }
+  .cart-row-pay{ grid-column: 1 / -1; text-align:left; display:flex; align-items:center; gap:16px; margin-top:8px; }
+}
+
+/* ===========================================================
    CATEGORY TEASERS (homepage)
    =========================================================== */
 .categories{ max-width:1440px; margin:0 auto; padding: 90px 32px; }
@@ -411,6 +457,7 @@ body.home.scrolled .nav-left .logo{ opacity:1; transform: translateY(0); pointer
 .size-options button.selected{ background: var(--black); color:#fff; border-color: var(--black); }
 
 .fit-note{ font-size:12px; color: rgba(11,11,11,.55); margin:-14px 0 20px; }
+.checkout-note{ font-size:11px; color: rgba(11,11,11,.5); margin:-6px 0 16px; max-width:44ch; }
 
 .add-to-cart-btn{
   display:block; width:100%; padding:16px;
