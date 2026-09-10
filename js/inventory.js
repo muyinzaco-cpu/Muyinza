@@ -50,9 +50,18 @@
     }
 
     function applyOverallAvailability() {
-      if (grandTotal() > 0) return;
       const addBtn = document.querySelector('.add-to-cart-btn');
       if (!addBtn) return;
+
+      // Global override: purchasing isn't open yet, regardless of per-item stock.
+      if (window.STORE_ACCEPTING_ORDERS === false) {
+        addBtn.disabled = true;
+        addBtn.classList.add('btn-sold-out');
+        addBtn.textContent = 'Coming Soon';
+        return;
+      }
+
+      if (grandTotal() > 0) return;
       addBtn.disabled = true;
       addBtn.classList.add('btn-sold-out');
       addBtn.textContent = 'Sold Out';
