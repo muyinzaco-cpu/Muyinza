@@ -456,6 +456,27 @@ body.home.scrolled .nav-left .logo{ opacity:1; transform: translateY(0); pointer
 .size-options button:hover{ border-color: var(--black); }
 .size-options button.selected{ background: var(--black); color:#fff; border-color: var(--black); }
 
+/* Sold-out treatment: diagonal slash across swatches and size buttons, fully blocked */
+.size-options button.sold-out,
+.swatch.sold-out,
+.color-swatch.sold-out,
+.angle-thumb.sold-out{
+  position:relative; opacity:.35; cursor:not-allowed; pointer-events:none;
+}
+.size-options button.sold-out::after,
+.color-swatch.sold-out::after{
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(to top right,
+    transparent calc(50% - 1px), currentColor calc(50% - 1px),
+    currentColor calc(50% + 1px), transparent calc(50% + 1px));
+}
+.color-swatch.sold-out::after{ border-radius:50%; }
+
+.add-to-cart-btn.btn-sold-out{
+  background: rgba(11,11,11,.3); cursor:not-allowed;
+}
+.add-to-cart-btn.btn-sold-out:hover{ background: rgba(11,11,11,.3); }
+
 .fit-note{ font-size:12px; color: rgba(11,11,11,.55); margin:-14px 0 20px; }
 .checkout-note{ font-size:11px; color: rgba(11,11,11,.5); margin:-6px 0 16px; max-width:44ch; }
 
